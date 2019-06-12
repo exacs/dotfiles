@@ -125,8 +125,8 @@ lalt - j : chunkc tiling::window --focus south
 lalt - k : chunkc tiling::window --focus north
 lalt - l : chunkc tiling::window --focus east
 
-cmd - j : chunkc tiling::window --focus prev
-cmd - k : chunkc tiling::window --focus next
+# cmd - j : chunkc tiling::window --focus prev
+# cmd - k : chunkc tiling::window --focus next
 
 # equalize size of windows
 shift + lalt - 0 : chunkc tiling::desktop --equalize
