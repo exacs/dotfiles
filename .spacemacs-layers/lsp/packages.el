@@ -4,5 +4,4 @@
 (defun lsp/init-lsp-mode ()
   (use-package lsp-mode
     :defer t
-    :hook (prog-mode . lsp)
     :commands lsp))
