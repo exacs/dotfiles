@@ -6,5 +6,3 @@
     :defer t
     :hook (prog-mode . lsp)
     :commands lsp))
-
-(defun lsp/post-init-company ())
