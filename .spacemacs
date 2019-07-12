@@ -57,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(lsp-mode add-node-modules-path)
+   dotspacemacs-additional-packages '(lsp-mode add-node-modules-path lsp-ui company-lsp)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -313,14 +313,26 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq ns-right-alternate-modifier nil)
+  (use-package company
+    :init
+    (global-company-mode))
   (use-package lsp-mode
     :hook (prog-mode . lsp)
     :config
     (setq lsp-enable-snippet nil)
     :commands (lsp))
+  (use-package lsp-ui
+    :config
+    (setq lsp-ui-sideline-enable t)
+    :hook (lsp-mode . lsp-ui))
+  (use-package company-lsp
+    :config
+    (push 'company-lsp company-backends))
   (eval-after-load 'js-mode
     '(add-hook 'js-mode-hook))
-  (setq js-indent-level 2))
+  (setq js-indent-level 2)
+  ;; (setq js-expr-indent-offset 0)
+  (setq js-chain-indent nil))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
