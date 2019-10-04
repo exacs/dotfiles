@@ -10,4 +10,6 @@
 (set-selection-coding-system 'utf-8) ; please
 (prefer-coding-system 'utf-8) ; with sugar on top
 
+(use-package magit :ensure t)
+
 (provide 'settings-global)
