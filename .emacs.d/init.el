@@ -28,6 +28,9 @@
   (package-install 'use-package))
 (require 'use-package)
 
+;;; Require settings
+(add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
+(require 'settings-global)
 
 ;;;; THE FOLLOWING LINES ARE ADDED AUTOMATICALLY AT THE END
 ;;;; ======================================================
