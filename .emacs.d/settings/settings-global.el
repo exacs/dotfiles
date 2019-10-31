@@ -26,12 +26,15 @@
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t))
 
+(use-package undo-tree :ensure t
+  :config
+  (global-undo-tree-mode))
+
 (provide 'settings-global)
 
 ;;; TODO
 ;; - evil collection
 ;; - dired+
-;; - undo-tree
 ;; ? visual-regexp + visual-regexp-steroids
 ;; - multiple cursors
 ;; - browse-kill-ring
