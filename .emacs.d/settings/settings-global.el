@@ -19,3 +19,22 @@
   (evil-mode 1))
 
 (provide 'settings-global)
+
+;;; TODO
+;; - ido / helm / ivy
+;; - evil collection
+;; - dired+
+;; - undo-tree
+;; ? visual-regexp + visual-regexp-steroids
+;; - multiple cursors
+;; - browse-kill-ring
+;; - projectile + find-file-in-project
+;; - lsp-mode + lsp-ui
+;; ? emacs-format-all-the-code
+;; smartparens
+;; js2-mode
+;; ? js2-refactor
+;; rjsx-mode
+;; which-key
+;; ? marcdown-mode
+;; ? slack
