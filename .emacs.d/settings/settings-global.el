@@ -3,6 +3,9 @@
 ;; Configuration that is independent from any package, language, etc. There is
 ;; no criteria or way to group them.
 
+;; Hide "Welcome" screen
+(setq inhibit-startup-screen t)
+
 ;; UTF-8 please
 (setq locale-coding-system 'utf-8) ; pretty
 (set-terminal-coding-system 'utf-8) ; pretty
