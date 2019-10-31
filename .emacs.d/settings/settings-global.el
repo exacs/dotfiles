@@ -18,10 +18,15 @@
   :config
   (evil-mode 1))
 
+(use-package ivy :ensure t
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
+
 (provide 'settings-global)
 
 ;;; TODO
-;; - ido / helm / ivy
 ;; - evil collection
 ;; - dired+
 ;; - undo-tree
