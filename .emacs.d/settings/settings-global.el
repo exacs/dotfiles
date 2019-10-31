@@ -34,6 +34,10 @@
   :config
   (projectile-mode 1))
 
+(use-package which-key :ensure t
+  :config
+  (which-key-mode))
+
 (provide 'settings-global)
 
 ;;; TODO
@@ -50,6 +54,5 @@
 ;; js2-mode
 ;; ? js2-refactor
 ;; rjsx-mode
-;; which-key
 ;; ? marcdown-mode
 ;; ? slack
