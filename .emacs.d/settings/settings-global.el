@@ -30,6 +30,10 @@
   :config
   (global-undo-tree-mode))
 
+(use-package projectile :ensure t
+  :config
+  (projectile-mode 1))
+
 (provide 'settings-global)
 
 ;;; TODO
@@ -38,7 +42,8 @@
 ;; ? visual-regexp + visual-regexp-steroids
 ;; - multiple cursors
 ;; - browse-kill-ring
-;; - projectile + find-file-in-project
+;; - find-file-in-project
+;; - ivy vertical
 ;; - lsp-mode + lsp-ui
 ;; ? emacs-format-all-the-code
 ;; smartparens
