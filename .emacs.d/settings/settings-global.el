@@ -11,5 +11,8 @@
 (prefer-coding-system 'utf-8) ; with sugar on top
 
 (use-package magit :ensure t)
+(use-package evil :ensure t
+  :config
+  (evil-mode 1))
 
 (provide 'settings-global)
