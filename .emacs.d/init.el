@@ -32,6 +32,10 @@
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (require 'settings-global)
 
+;;; Require themes
+(add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
+(load-theme 'seti t)
+
 ;;;; THE FOLLOWING LINES ARE ADDED AUTOMATICALLY AT THE END
 ;;;; ======================================================
 (custom-set-variables
