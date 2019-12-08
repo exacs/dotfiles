@@ -13,6 +13,13 @@
 (set-selection-coding-system 'utf-8) ; please
 (prefer-coding-system 'utf-8) ; with sugar on top
 
+;; Use "right alt" for "normal alt"
+;; and "left alt" as "super"
+(setq ns-right-alternate-modifier nil)
+(setq ns-left-alternate-modifier 'super)
+(setq mac-command-modifier 'meta)
+(setq ns-function-modifier 'hyper)
+
 (use-package magit :ensure t)
 (use-package evil :ensure t
   :config
@@ -37,6 +44,8 @@
 (use-package which-key :ensure t
   :config
   (which-key-mode))
+
+(use-package cider :ensure t)
 
 (provide 'settings-global)
 
