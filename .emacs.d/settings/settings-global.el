@@ -22,8 +22,15 @@
 
 (use-package magit :ensure t)
 (use-package evil :ensure t
+  :init
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1))
+
+(use-package evil-collection :ensure t
+  :after evil
+  :config
+  (evil-collection-init))
 
 (use-package ivy :ensure t
   :bind (("M-x" . counsel-M-x)
