@@ -51,6 +51,8 @@
   :config
   (projectile-mode 1))
 
+(use-package find-file-in-project :ensure t)
+
 (use-package which-key :ensure t
   :config
   (which-key-mode))
@@ -61,13 +63,14 @@
 
 (use-package cider :ensure t)
 
+(use-package lsp-mode :ensure t
+  :hook (prog-mode . lsp)
+  :commands lsp)
+
 (provide 'settings-global)
 
 ;;; TODO
 ;; - multiple cursors
-;; - find-file-in-project
-;; - ivy vertical
-;; - lsp-mode + lsp-ui
 ;; ? emacs-format-all-the-code
 ;; smartparens
 ;; js2-mode
@@ -78,3 +81,4 @@
 ;; powerline
 ;; - dired+
 ;; ? visual-regexp + visual-regexp-steroids
+;; - lsp-ui
