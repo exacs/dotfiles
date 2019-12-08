@@ -32,6 +32,9 @@
   :config
   (evil-collection-init))
 
+(use-package evil-magit :ensure t
+  :after (evil magit))
+
 (use-package ivy :ensure t
   :bind (("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file))
