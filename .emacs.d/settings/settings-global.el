@@ -65,3 +65,4 @@
 ;; rjsx-mode
 ;; ? marcdown-mode
 ;; ? slack
+;; powerline
