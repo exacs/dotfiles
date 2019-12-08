@@ -55,16 +55,16 @@
   :config
   (which-key-mode))
 
+(use-package browse-kill-ring :ensure t
+  :config
+  (browse-kill-ring-default-keybindings))
+
 (use-package cider :ensure t)
 
 (provide 'settings-global)
 
 ;;; TODO
-;; - evil collection
-;; - dired+
-;; ? visual-regexp + visual-regexp-steroids
 ;; - multiple cursors
-;; - browse-kill-ring
 ;; - find-file-in-project
 ;; - ivy vertical
 ;; - lsp-mode + lsp-ui
@@ -76,3 +76,5 @@
 ;; ? marcdown-mode
 ;; ? slack
 ;; powerline
+;; - dired+
+;; ? visual-regexp + visual-regexp-steroids
