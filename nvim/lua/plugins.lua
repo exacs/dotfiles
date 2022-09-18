@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -6,53 +6,69 @@ vim.cmd([[
   augroup end
 ]])
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+return require("packer").startup(function(use)
+	-- Packer can manage itself
+	use("wbthomason/packer.nvim")
 
-    -- Theme and lualine
-    use {
-        'Mofiqul/vscode.nvim',
-        config = function ()
-            require("vscode").setup({})
-        end
-    }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {
-             'kyazdani42/nvim-web-devicons', opt = true
-        },
-        config = function ()
-            require("lualine").setup({
-                options = {
-                    theme = 'vscode'
-                }
-            })
-        end
-    }
+	-- Format
+	use("gpanders/editorconfig.nvim")
+	use({
+		"mhartington/formatter.nvim",
+		config = function()
+			require("formatter").setup({
+				filetype = {
+					lua = {
+						require("formatter.filetypes.lua").stylua,
+					},
+				},
+			})
+		end,
+	})
 
-    -- Which key
-    use {
-        "folke/which-key.nvim",
-        config = function ()
-            local wk = require("which-key")
-            wk.setup {
-                key_labels = {
-                    ["<space>"] = "SPC",
-                    ["<cr>"] = "RET",
-                    ["<esc>"] = "ESC",
-                    ["<bs>"] = "BACK",
-                    ["<tab>"] = "TAB"
-                }
-            }
-            wk.register({
-                ["<space>"] = {
-                    function()
-                        print("hello world")
-                    end,
-                    "Foobar"
-                }
-            }, { prefix = "<leader>" })
-        end
-    }
+	-- Theme and lualine
+	use({
+		"Mofiqul/vscode.nvim",
+		config = function()
+			require("vscode").setup({})
+		end,
+	})
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons",
+			opt = true,
+		},
+		config = function()
+			require("lualine").setup({
+				options = {
+					theme = "vscode",
+				},
+			})
+		end,
+	})
+
+	-- Which key
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			local wk = require("which-key")
+			wk.setup({
+				key_labels = {
+					["<space>"] = "SPC",
+					["<cr>"] = "RET",
+					["<esc>"] = "ESC",
+					["<bs>"] = "BACK",
+					["<tab>"] = "TAB",
+				},
+			})
+			wk.register({
+				["<space>"] = {
+					function()
+						print("hello world")
+					end,
+					"Foobar",
+				},
+			}, { prefix = "<leader>" })
+		end,
+	})
 end)

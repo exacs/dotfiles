@@ -12,7 +12,6 @@ require("plugins")
 -- Optional. hydra: https://github.com/anuvyklack/hydra.nvim
 -- nvim-dap: Debug Adapter Protocol: https://github.com/mfussenegger/nvim-dap
 -- Project related plugins: https://github.com/rockerBOO/awesome-neovim#project
--- editorconfig: https://github.com/gpanders/editorconfig.nvim
 -- Formatters: https://github.com/dense-analysis/ale or https://github.com/sbdchd/neoformat
 -- vv: Neovim client for MacOS https://github.com/vv-vim/vv
 --
