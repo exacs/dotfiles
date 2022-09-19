@@ -9,9 +9,13 @@ vim.cmd([[
 return require("packer").startup(function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
-
-  -- Format
   use("gpanders/editorconfig.nvim")
+  use({
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("languages.typescript")()
+    end,
+  })
   use({
     "mhartington/formatter.nvim",
     config = function()
