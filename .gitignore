@@ -3,3 +3,4 @@
 .emacs.d/elpa
 .emacs.d/.lsp-session-*
 .emacs.d/recentf
+nvim/plugin
