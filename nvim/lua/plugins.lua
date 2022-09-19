@@ -4,6 +4,10 @@ vim.cmd([[
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
+  augroup fmt
+    autocmd!
+    autocmd BufWritePre * undojoin | Neoformat
+  augroup END
 ]])
 
 return require("packer").startup(function(use)
@@ -16,18 +20,32 @@ return require("packer").startup(function(use)
       require("languages.typescript")()
     end,
   })
+
+  -- Use neoformat until "formatter" accepts
+  -- "try_node_modules"
   use({
-    "mhartington/formatter.nvim",
+    "sbdchd/neoformat",
     config = function()
-      require("formatter").setup({
-        filetype = {
-          lua = {
-            require("formatter.filetypes.lua").stylua,
-          },
-        },
-      })
+      vim.cmd([[let g:neoformat_try_node_exe = 1]])
     end,
   })
+
+  -- use({
+  --   "mhartington/formatter.nvim",
+  --   config = function()
+  --     require("formatter").setup({
+  --       filetype = {
+  --         lua = {
+  --           require("formatter.filetypes.lua").stylua,
+  --         },
+
+  --         ["*"] = {
+  --           require("formatter.defaults.prettier")
+  --         }
+  --       },
+  --     })
+  --   end,
+  -- })
 
   -- Theme and lualine
   use({
