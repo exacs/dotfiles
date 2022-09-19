@@ -71,4 +71,14 @@ return require("packer").startup(function(use)
 			}, { prefix = "<leader>" })
 		end,
 	})
+
+	-- Telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.0",
+		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("telescope").setup({})
+		end,
+	})
 end)
