@@ -21,6 +21,14 @@ return function()
   -- <leader>c = nvim configuration
   wk.register({
     name = "nvim config",
+    c = {
+      function()
+        require("telescope.builtin").find_files({
+          cwd = vim.fn.fnamemodify(vim.env.MYVIMRC, ":h"),
+        })
+      end,
+      "Open conf directory",
+    },
     i = { "<cmd>:e $MYVIMRC<cr>", "Open 'init.lua'" },
   }, { prefix = "<leader>c" })
 
