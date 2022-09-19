@@ -15,6 +15,14 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("gpanders/editorconfig.nvim")
   use({
+    "ahmedkhalf/project.nvim",
+    requires = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("project_nvim").setup({})
+      require("telescope").load_extension("projects")
+    end,
+  })
+  use({
     "neovim/nvim-lspconfig",
     config = function()
       require("languages.typescript")()
