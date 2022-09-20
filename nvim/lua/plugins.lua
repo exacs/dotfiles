@@ -15,6 +15,18 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("gpanders/editorconfig.nvim")
   use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        auto_install = true,
+        highlight = { enable = true },
+      })
+    end,
+  })
+  use({
     "ahmedkhalf/project.nvim",
     requires = { "nvim-telescope/telescope.nvim" },
     config = function()
