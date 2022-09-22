@@ -3,6 +3,8 @@ vim.o.number = true
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 require("plugins")
 
 -- TODO

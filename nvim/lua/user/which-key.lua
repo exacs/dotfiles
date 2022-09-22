@@ -10,12 +10,22 @@ return function()
     },
   })
 
+  -- , = LSP functions
+  wk.register({
+    name = "LSP",
+    [","] = { vim.lsp.buf.hover, "hover" },
+    ["r"] = { vim.lsp.buf.references, "references" },
+    ["i"] = { vim.lsp.buf.implementation, "implementation" },
+    ["."] = { vim.lsp.buf.code_action, "action" },
+  }, { prefix = "," })
+
   -- <leader>f = file
   wk.register({
     name = "file",
     f = { "<cmd>Telescope find_files<cr>", "Find files (Telescope)" },
     F = { "<cmd>Telescope git_files<cr>", "Git files (Telescope)" },
     b = { "<cmd>Telescope buffers<cr>", "Buffers (Telescope)" },
+    t = { "<cmd>NvimTreeFindFile<cr>", "Find file (Tree)" },
   }, { prefix = "<leader>f" })
 
   -- <leader>c = nvim configuration

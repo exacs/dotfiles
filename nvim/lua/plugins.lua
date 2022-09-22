@@ -89,6 +89,14 @@ return require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "kyazdani42/nvim-tree.lua",
+    requires = { "kyazdani42/nvim-web-devicons" },
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  })
+
   -- Which key
   use({ "folke/which-key.nvim", config = require("user.which-key") })
 
