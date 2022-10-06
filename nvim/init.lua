@@ -5,6 +5,8 @@ vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
+vim.opt.showtabline = 2
 require("plugins")
 
 -- TODO

@@ -22,7 +22,7 @@ return require("packer").startup(function(use)
     config = function()
       require("nvim-treesitter.configs").setup({
         auto_install = true,
-        highlight = { enable = true },
+        -- highlight = { enable = true },
       })
     end,
   })
@@ -98,10 +98,7 @@ return require("packer").startup(function(use)
   })
   use({
     "nvim-lualine/lualine.nvim",
-    requires = {
-      "kyazdani42/nvim-web-devicons",
-      opt = true,
-    },
+    requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require("lualine").setup({
         options = {
@@ -117,6 +114,10 @@ return require("packer").startup(function(use)
     config = function()
       require("nvim-tree").setup()
     end,
+  })
+  use({
+    "romgrk/barbar.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
   })
 
   -- Which key
@@ -146,4 +147,12 @@ return require("packer").startup(function(use)
     },
     config = require("user.cmp"),
   })
+  --use({
+  --  "akinsho/bufferline.nvim",
+  --  tag = "v2.*",
+  --  requires = "kyazdani42/nvim-web-devicons",
+  --  config = function()
+  --    require("bufferline").setup({})
+  --  end,
+  --:wbthomason})
 end)
