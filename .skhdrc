@@ -1,45 +1,19 @@
 #!/bin/bash
 # focus window
-lalt - h : yabai -m window --focus west
-lalt - j : yabai -m window --focus south
-lalt - k : yabai -m window --focus north
-lalt - l : yabai -m window --focus east
+lctrl - h : yabai -m window --focus prev
+lctrl - l : yabai -m window --focus next
 
 # swap window
-# shift + lalt - h : yabai -m window --swap west
-# shift + lalt - j : yabai -m window --swap south
-# shift + lalt - k : yabai -m window --swap north
-# shift + lalt - l : yabai -m window --swap east
-
-# move window
-shift + lalt - h : yabai -m window --warp west
-shift + lalt - j : yabai -m window --warp south
-shift + lalt - k : yabai -m window --warp north
-shift + lalt - l : yabai -m window --warp east
+shift + lctrl - h : yabai -m window --swap prev
+shift + lctrl - l : yabai -m window --swap next
 
 # fast focus desktop
 lalt - 1 : yabai -m space --focus 2
 lalt - 2 : yabai -m space --focus 3
-lalt - 3 : yabai -m space --focus 4
-lalt - 4 : yabai -m space --focus 5
-lalt - 5 : yabai -m space --focus 6
-lalt - 6 : yabai -m space --focus 7
-lalt - 7 : yabai -m space --focus 8
-lalt - 8 : yabai -m space --focus 9
-lalt - 9 : yabai -m space --focus 10
-lalt - 0 : yabai -m space --focus 1
 
 # send window to desktop and follow focus
-shift + lalt - 1 : yabai -m window --space  2;
-shift + lalt - 2 : yabai -m window --space  3;
-shift + lalt - 3 : yabai -m window --space  4;
-shift + lalt - 4 : yabai -m window --space  5;
-shift + lalt - 5 : yabai -m window --space  6;
-shift + lalt - 6 : yabai -m window --space  7;
-shift + lalt - 7 : yabai -m window --space  8;
-shift + lalt - 8 : yabai -m window --space  9;
-shift + lalt - 9 : yabai -m window --space 10;
-shift + lalt - 0 : yabai -m window --space  1;
+shift + lctrl - 1 : yabai -m window --space  2;
+shift + lctrl - 2 : yabai -m window --space  3;
 
 # toggle desktop offset
 lalt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
