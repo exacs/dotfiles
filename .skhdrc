@@ -10,20 +10,12 @@ shift + rcmd - a : yabai -m window --swap prev
 shift + rcmd - f : yabai -m window --swap next
 
 # fast focus desktop
-lalt - 1 : yabai -m space --focus 2
-lalt - 2 : yabai -m space --focus 3
+rcmd - 1 : yabai -m space --focus 2
+rcmd - 2 : yabai -m space --focus 3
 
 # send window to desktop and follow focus
-shift + lctrl - 1 : yabai -m window --space  2;
-shift + lctrl - 2 : yabai -m window --space  3;
+shift + rcmd - 1 : yabai -m window --space  2;
+shift + rcmd - 2 : yabai -m window --space  3;
 
-# toggle desktop offset
-lalt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
-
-# toggle window 2x or fullscreen
-lalt - d : yabai -m window --toggle zoom-parent
-lalt - f : yabai -m window --toggle zoom-fullscreen
-
-# change layout of desktop
-ctrl + lalt - a : yabai -m space --layout bsp
-ctrl + lalt - d : yabai -m space --layout float
+# toggle fullscreen
+rcmd - space : yabai -m window --toggle zoom-fullscreen
