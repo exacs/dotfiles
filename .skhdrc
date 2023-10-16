@@ -1,11 +1,13 @@
 #!/bin/bash
 # focus window
-lctrl - h : yabai -m window --focus prev
-lctrl - l : yabai -m window --focus next
+rcmd - a : yabai -m window --focus prev
+rcmd - f : yabai -m window --focus next
+rcmd - s : yabai -m window --focus stack.next
+rcmd - d : yabai -m window --focus stack.prev
 
 # swap window
-shift + lctrl - h : yabai -m window --swap prev
-shift + lctrl - l : yabai -m window --swap next
+shift + rcmd - a : yabai -m window --swap prev
+shift + rcmd - f : yabai -m window --swap next
 
 # fast focus desktop
 lalt - 1 : yabai -m space --focus 2

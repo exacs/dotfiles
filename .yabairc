@@ -23,4 +23,10 @@ yabai -m config window_gap       0
 # Specific per space
 yabai -m config --space 2 layout stack
 
+# Apps that should be ignored by yabai
+# Query app titles with `yabai -m query --windows | jq '.[] | .app'`
+yabai -m rule --add app="System​inställningar" manage=off
+yabai -m rule --add app="^Ukelele$" manage=off
+# Ukelele
+
 echo "yabai configuration loaded.."
