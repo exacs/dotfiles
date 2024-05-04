@@ -1,11 +1,26 @@
 -- WISH LIST
 -- LSP Rust
--- Auto format
---  neoformat
 -- Project navigation
 -- Multiple buffers
 
 return {
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme tokyonight-night]])
+    end,
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {},
+  },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
@@ -24,6 +39,10 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
+      },
+      format_on_save = {
+        lsp_fallback = true,
+        timeout_ms = 200,
       },
     },
   },
