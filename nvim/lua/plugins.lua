@@ -1,6 +1,5 @@
 -- WISH LIST
 -- LSP Rust
--- Project navigation
 -- Multiple buffers
 
 return {
@@ -44,6 +43,20 @@ return {
         lsp_fallback = true,
         timeout_ms = 200,
       },
+    },
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
+    cmd = "Neotree",
+    keys = {
+      { "<leader>n", "<cmd>Neotree<cr>", desc = "Neotree" },
     },
   },
 }
