@@ -11,7 +11,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- Start
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = ","
 
 -- Will read `./lua/plugins.lua` OR `./lua/plugins/*.lua"
 require("lazy").setup("plugins")
