@@ -1,7 +1,4 @@
 -- WISH LIST
--- 1. Code completion
--- 2. Go to definition
--- 3. Shortcuts for switching between buffers and splitting
 -- 4. Shortucts for open file in split window
 
 return {
@@ -52,5 +49,12 @@ return {
         end,
       },
     },
+  },
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
   },
 }
