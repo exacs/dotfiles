@@ -18,7 +18,7 @@ return {
             n = { "<cmd>enew<cr>", "New File" },
           },
 
-          n = { "<cmd>Neotree<cr>", desc = "Neotree" },
+          n = { "<cmd>Neotree<cr>", "Neotree" },
         },
 
         ["<localleader>"] = {
