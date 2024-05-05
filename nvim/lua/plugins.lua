@@ -14,25 +14,10 @@ return {
     end,
   },
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {},
-  },
-  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
     dependencies = {
       "nvim-lua/plenary.nvim",
-    },
-    keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-      { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-      { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
     },
   },
   {
@@ -57,9 +42,6 @@ return {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     cmd = "Neotree",
-    keys = {
-      { "<leader>n", "<cmd>Neotree<cr>", desc = "Neotree" },
-    },
   },
   {
     "hrsh7th/nvim-cmp",
