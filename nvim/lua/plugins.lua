@@ -1,6 +1,8 @@
 -- WISH LIST
--- LSP Rust
--- Multiple buffers
+-- 1. Code completion
+-- 2. Go to definition
+-- 3. Shortcuts for switching between buffers and splitting
+-- 4. Shortucts for open file in split window
 
 return {
   {
@@ -57,6 +59,16 @@ return {
     cmd = "Neotree",
     keys = {
       { "<leader>n", "<cmd>Neotree<cr>", desc = "Neotree" },
+    },
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      snippet = {
+        expand = function(args)
+          vim.snippet.expand(args.body)
+        end,
+      },
     },
   },
 }
