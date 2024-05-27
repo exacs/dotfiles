@@ -7,6 +7,8 @@ return {
           ["rust-analyzer"] = {},
         },
       })
+
+      require("lspconfig").tsserver.setup({})
     end,
   },
 }

@@ -13,6 +13,7 @@ return {
           f = {
             name = "+file",
             f = { "<cmd>Telescope find_files<cr>", "Find File" },
+            g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
             b = { "<cmd>Telescope buffers<cr>", "Buffers" },
             r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
             n = { "<cmd>enew<cr>", "New File" },

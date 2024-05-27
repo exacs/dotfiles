@@ -3,13 +3,21 @@
 
 return {
   {
-    "folke/tokyonight.nvim",
+    "dracula/vim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme tokyonight-night]])
+      vim.cmd([[colorscheme dracula]])
     end,
   },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme tokyonight-night]])
+  --   end,
+  -- },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
@@ -22,10 +30,13 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
       },
       format_on_save = {
         lsp_fallback = true,
-        timeout_ms = 200,
+        timeout_ms = 2500,
       },
     },
   },
