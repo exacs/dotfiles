@@ -26,6 +26,11 @@ return {
     },
   },
   {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
+  {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
