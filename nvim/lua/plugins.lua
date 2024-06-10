@@ -34,6 +34,8 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        jsonc = { "prettier" },
+        json = { "prettier" },
         lua = { "stylua" },
         javascript = { "prettier" },
         typescript = { "prettier" },
