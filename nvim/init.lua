@@ -13,5 +13,12 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- Filetypes
+vim.filetype.add({
+  extension = {
+    njk = "html",
+  },
+})
+
 -- Will read `./lua/plugins.lua` OR `./lua/plugins/*.lua"
 require("lazy").setup("plugins")

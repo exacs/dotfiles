@@ -4,13 +4,34 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 return {
   {
     "neovim/nvim-lspconfig",
+    dependencies = { "williamboman/mason-lspconfig.nvim", "williamboman/mason.nvim" },
     config = function()
+      require("mason").setup({})
+      -- First ensure installation of LSP servers
+      require("mason-lspconfig").setup({
+        -- ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "emmet-language-server", "jsonls" },
+        automatic_installation = true,
+      })
       require("lspconfig").rust_analyzer.setup({
         settings = {
           ["rust-analyzer"] = {},
         },
       })
-
+      require("lspconfig").emmet_language_server.setup({
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "pug",
+          "typescriptreact",
+        },
+        init_options = {},
+      })
       require("lspconfig").tsserver.setup({})
       require("lspconfig").jsonls.setup({
         capabilities = capabilities,

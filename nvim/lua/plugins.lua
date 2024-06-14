@@ -10,6 +10,10 @@ return {
       vim.cmd([[colorscheme dracula]])
     end,
   },
+  {
+    "williamboman/mason.nvim",
+    opts = {},
+  },
   -- {
   --   "folke/tokyonight.nvim",
   --   lazy = false,
@@ -32,20 +36,25 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        jsonc = { "prettier" },
-        json = { "prettier" },
-        lua = { "stylua" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
-      },
-      format_on_save = {
-        lsp_fallback = true,
-        timeout_ms = 2500,
-      },
-    },
+    dependencies = { "zapling/mason-conform.nvim", "williamboman/mason.nvim" },
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          html = { "prettier" },
+          jsonc = { "prettier" },
+          json = { "prettier" },
+          lua = { "stylua" },
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          typescriptreact = { "prettier" },
+        },
+        format_on_save = {
+          lsp_fallback = true,
+          timeout_ms = 2500,
+        },
+      })
+      require("mason-conform").setup({})
+    end,
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
