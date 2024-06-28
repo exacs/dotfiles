@@ -33,6 +33,7 @@ return {
           },
           ["."] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
           r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+          e = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
         },
       })
     end,
