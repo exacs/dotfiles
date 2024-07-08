@@ -20,6 +20,7 @@ return {
           },
 
           n = { "<cmd>Neotree<cr>", "Neotree" },
+          u = { "<cmd>Telescope undo<cr>", "Undo tree" },
         },
 
         ["<localleader>"] = {
