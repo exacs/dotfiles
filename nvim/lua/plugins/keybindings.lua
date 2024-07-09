@@ -37,6 +37,17 @@ return {
           e = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
         },
       })
+
+      -- Only if "nvim-cmp" is installed
+      wk.register({
+        ["<leader>a"] = {
+          function()
+            vim.b.cmp_enabled = not vim.b.cmp_enabled
+            require("cmp").setup.buffer({ enabled = vim.b.cmp_enabled })
+          end,
+          "Toggle autocomplete",
+        },
+      })
     end,
     opts = {},
   },
