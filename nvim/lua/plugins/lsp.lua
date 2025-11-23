@@ -12,12 +12,13 @@ return {
         -- ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "emmet-language-server", "jsonls" },
         automatic_installation = true,
       })
-      require("lspconfig").rust_analyzer.setup({
+      vim.lsp.config("rust_analyzer", {
         settings = {
           ["rust-analyzer"] = {},
         },
       })
-      require("lspconfig").emmet_language_server.setup({
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.config("emmet_language_server", {
         filetypes = {
           "css",
           "eruby",
@@ -32,8 +33,9 @@ return {
         },
         init_options = {},
       })
-      require("lspconfig").tsserver.setup({})
-      require("lspconfig").jsonls.setup({
+      vim.lsp.enable("emmet_language_server")
+      vim.lsp.enable("ts_ls")
+      vim.lsp.config("jsonls", {
         capabilities = capabilities,
         settings = {
           json = {
@@ -83,6 +85,7 @@ return {
           },
         },
       })
+      vim.lsp.enable("jsonls")
     end,
   },
 }
