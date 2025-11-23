@@ -7,45 +7,35 @@ return {
 
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-
-      wk.register({
-        ["<leader>"] = {
-          f = {
-            name = "+file",
-            f = { "<cmd>Telescope find_files<cr>", "Find File" },
-            g = { "<cmd>Telescope live_grep<cr>", "Live grep" },
-            b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-            r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-            n = { "<cmd>enew<cr>", "New File" },
-          },
-
-          n = { "<cmd>Neotree<cr>", "Neotree" },
-          u = { "<cmd>Telescope undo<cr>", "Undo tree" },
-        },
-
-        ["<localleader>"] = {
-          ["<localleader>"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover info" },
-          d = {
-            name = "+diag",
-            d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show diagnostic under cursor" },
-            n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diag" },
-            p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev diag" },
-            t = { "<cmd>lua require'telescope.builtin'.diagnostics{}<cr>", "Telescope diagnostics" },
-          },
-          ["."] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action" },
-          r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-          e = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
-        },
+      wk.add({
+        { "<leader>f", group = "file" },
+        { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+        { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
+        { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+        { "<leader>fn", "<cmd>enew<cr>", desc = "New File" },
+        { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File" },
+        { "<leader>n", "<cmd>Neotree<cr>", desc = "Neotree" },
+        { "<leader>u", "<cmd>Telescope undo<cr>", desc = "Undo tree" },
+        { "<localleader>.", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code action" },
+        { "<localleader><localleader>", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover info" },
+        { "<localleader>d", group = "diag" },
+        { "<localleader>dd", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Show diagnostic under cursor" },
+        { "<localleader>dn", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next diag" },
+        { "<localleader>dp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev diag" },
+        { "<localleader>dt", "<cmd>lua require'telescope.builtin'.diagnostics{}<cr>", desc = "Telescope diagnostics" },
+        { "<localleader>e", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "References" },
+        { "<localleader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
       })
 
       -- Only if "nvim-cmp" is installed
-      wk.register({
-        ["<leader>a"] = {
+      wk.add({
+        {
+          "<leader>a",
           function()
             vim.b.cmp_enabled = not vim.b.cmp_enabled
             require("cmp").setup.buffer({ enabled = vim.b.cmp_enabled })
           end,
-          "Toggle autocomplete",
+          desc = "Toggle autocomplete",
         },
       })
     end,
